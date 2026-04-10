@@ -9,80 +9,80 @@ const questions = [
   {
     text: "Do you prefer hot or cold weather?",
     answers: [
-      { text: "Hot", type: "classic" },
-      { text: "Cold", type: "iced" },
+      { text: "☀️ Hot", type: "classic" },
+      { text: "❄️ Cold", type: "iced" },
     ],
   },
   {
     text: "If you won the lottery tomorrow, what you would you do first?",
     answers: [
-      { text: "Shopping spree!!", type: "iced" },
-      { text: "Invest it", type: "classic" },
-      { text: "Quit your job", type: "lavender" },
+      { text: "🛍️ Shopping spree!!", type: "iced" },
+      { text: "📈 Invest it", type: "classic" },
+      { text: "✌️ Quit your job", type: "lavender" },
     ],
   },
   {
     text: "Your best friend just hit someone with their car and they come to you for help. What do you do?",
     answers: [
-      { text: "Call the police", type: "classic" },
-      { text: "Grab a shovel", type: "iced" },
-      { text: "Make a list of pros and cons", type: "oat" },
+      { text: "🚓 Call the police", type: "classic" },
+      { text: "⛏️ Grab a shovel", type: "iced" },
+      { text: "📝 Make a list of pros and cons", type: "oat" },
     ],
   },
   {
     text: "Which kind of ice do you prefer?",
     answers: [
-      { text: "Pebble ice", type: "iced" },
-      { text: "Cube", type: "classic" },
-      { text: "I hate ice", type: "oat" },
+      { text: "🧊 Pebble ice", type: "iced" },
+      { text: "🔲 Cube", type: "classic" },
+      { text: "🚫 I hate ice", type: "oat" },
     ],
   },
   {
     text: "It’s Friday night! Where you at?",
     answers: [
-      { text: "The club", type: "iced" },
-      { text: "Playing board games", type: "oat" },
-      { text: "Watching Netflix", type: "lavender" },
+      { text: "🪩 The club", type: "iced" },
+      { text: "🎲 Playing board games", type: "oat" },
+      { text: "🍿 Watching Netflix", type: "lavender" },
     ],
   },
   {
     text: "Uh oh, it’s Saturday and your boss is calling! What do you do?",
     answers: [
-      { text: "Ignore it", type: "lavender" },
-      { text: "Answer right away", type: "classic" },
-      { text: "Tell them you’ll circle back on Monday", type: "oat" },
+      { text: "🔕 Ignore it", type: "lavender" },
+      { text: "📞 Answer right away", type: "classic" },
+      { text: "🗓️ Tell them you’ll circle back on Monday", type: "oat" },
     ],
   },
   {
     text: "Oh no! Aliens have invaded earth. They said they’ll leave us alone if we sacrifice one of these three. Who do you pick:",
     answers: [
-      { text: "Justin Bieber", type: "classic" },
-      { text: "Zendaya", type: "lavender" },
-      { text: "Tom Holland", type: "oat" },
+      { text: "🎤 Justin Bieber", type: "classic" },
+      { text: "🌟 Zendaya", type: "lavender" },
+      { text: "🕷️ Tom Holland", type: "oat" },
     ],
   },
   {
     text: "You have to eat one food for the rest of your life, what is it?",
     answers: [
-      { text: "Ramen", type: "iced" },
-      { text: "Pizza", type: "oat" },
-      { text: "Soup", type: "classic" },
+      { text: "🍜 Ramen", type: "iced" },
+      { text: "🍕 Pizza", type: "oat" },
+      { text: "🥣 Soup", type: "classic" },
     ],
   },
   {
     text: "If everyone in the world had the same super power except you, what would you want it to be? (You have no powers)",
     answers: [
-      { text: "Teleportation", type: "iced" },
-      { text: "Super strength", type: "classic" },
-      { text: "Mind reading", type: "lavender" },
+      { text: "🌌 Teleportation", type: "iced" },
+      { text: "💪 Super strength", type: "classic" },
+      { text: "🧠 Mind reading", type: "lavender" },
     ],
   },
   {
     text: "What’s your favorite fun drink? (Other than matcha)",
     answers: [
-      { text: "Boba", type: "lavender" },
-      { text: "Alcoholic bevvie", type: "iced" },
-      { text: "Soda", type: "classic" },
+      { text: "🧋 Boba", type: "lavender" },
+      { text: "🍸 Alcoholic bevvie", type: "iced" },
+      { text: "🥤 Soda", type: "classic" },
     ],
   },
 ];
