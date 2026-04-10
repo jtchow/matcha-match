@@ -237,7 +237,7 @@ function showLoadingScreen() {
       setTimeout(() => {
         loadingText.textContent = loadingMessages[msgIndex];
         loadingText.style.opacity = "1";
-      }, 300);
+      }, 1000);
     }
   }, 1000);
 
