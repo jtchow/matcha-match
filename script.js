@@ -209,6 +209,44 @@ function calculateResult() {
 const urlParams = new URLSearchParams(window.location.search);
 const isPrank = urlParams.has("refer");
 
+// ── Loading screen ──────────────────────────────
+const loadingScreen = document.getElementById("loading-screen");
+const loadingText = document.getElementById("loading-text");
+
+const loadingMessages = [
+  "Whisking your answers... 🍵",
+  "Steaming the oat milk... 🥛",
+  "Sifting through matcha powder... 🍃",
+  "Adding a sprinkle of magic... ✨",
+  "Almost ready... 🌸",
+];
+
+let loadingInterval = null;
+
+function showLoadingScreen() {
+  showScreen(loadingScreen);
+  progressBar.style.width = "90%";
+
+  let msgIndex = 0;
+  loadingText.textContent = loadingMessages[0];
+
+  loadingInterval = setInterval(() => {
+    msgIndex++;
+    if (msgIndex < loadingMessages.length) {
+      loadingText.style.opacity = "0";
+      setTimeout(() => {
+        loadingText.textContent = loadingMessages[msgIndex];
+        loadingText.style.opacity = "1";
+      }, 300);
+    }
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(loadingInterval);
+    showResult();
+  }, loadingMessages.length * 1000);
+}
+
 // ── Show result ─────────────────────────────────
 function showResult() {
   if (isPrank) {
@@ -238,7 +276,7 @@ nextBtn.addEventListener("click", () => {
     currentQuestion++;
     renderQuestion();
   } else {
-    showResult();
+    showLoadingScreen();
   }
 });
 

@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What Kind of Matcha Latte Are You?</title>
-  <meta name="description" content="Take this fun quiz to find out what kind of matcha latte matches your personality!" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Kind of Matcha Latte Are You?</title>
+    <meta name="description"
+        content="Take this fun quiz to find out what kind of matcha latte matches your personality!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="quiz-container">
+    <div class="quiz-container">
 
-    <!-- ✿ Intro Screen ✿ -->
-    <div id="intro-screen" class="screen active">
-      <div class="intro-content">
-        <div class="matcha-icon">🍵</div>
-        <h1>What Kind of Matcha Latte Are You?</h1>
-        <p class="subtitle">Answer a few questions to discover your matcha match!</p>
-        <button id="start-btn" class="btn btn-primary">Let's Go! 🌿</button>
-      </div>
-    </div>
-
-    <!-- ✿ Question Screen ✿ -->
-    <div id="question-screen" class="screen">
-      <div class="progress-bar-container">
-        <div id="progress-bar" class="progress-bar"></div>
-      </div>
-      <div class="question-content">
-        <p id="question-number" class="question-number">Question 1 of 5</p>
-        <h2 id="question-text" class="question-text">Loading question...</h2>
-        <div id="answers-container" class="answers-container">
-          <!-- answer buttons injected by JS -->
+        <!-- ✿ Intro Screen ✿ -->
+        <div id="intro-screen" class="screen active">
+            <div class="intro-content">
+                <div class="matcha-icon">🍵</div>
+                <h1>What Kind of Matcha Latte Are You?</h1>
+                <p class="subtitle">Answer a few questions to discover your matcha match!</p>
+                <button id="start-btn" class="btn btn-primary">Let's Go! 🌿</button>
+            </div>
         </div>
-      </div>
-      <div class="nav-buttons">
-        <button id="back-btn" class="btn btn-secondary" disabled>← Back</button>
-        <button id="next-btn" class="btn btn-primary" disabled>Next →</button>
-      </div>
+
+        <!-- ✿ Question Screen ✿ -->
+        <div id="question-screen" class="screen">
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div class="question-content">
+                <p id="question-number" class="question-number">Question 1 of 5</p>
+                <h2 id="question-text" class="question-text">Loading question...</h2>
+                <div id="answers-container" class="answers-container">
+                    <!-- answer buttons injected by JS -->
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <button id="back-btn" class="btn btn-secondary" disabled>← Back</button>
+                <button id="next-btn" class="btn btn-primary" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- ✿ Loading Screen ✿ -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-content">
+                <div class="loading-cups">
+                    <span class="loading-cup" style="--i:0">🍵</span>
+                    <span class="loading-cup" style="--i:1">🍃</span>
+                    <span class="loading-cup" style="--i:2">🍵</span>
+                </div>
+                <div class="loading-whisk">
+                    <div class="whisk-circle"></div>
+                </div>
+                <p id="loading-text" class="loading-text">Whisking your answers...</p>
+                <div class="loading-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✿ Result Screen ✿ -->
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <div id="result-emoji" class="result-emoji">🍵</div>
+                <h2 id="result-title" class="result-title">You are a...</h2>
+                <p id="result-description" class="result-description"></p>
+                <button id="retake-btn" class="btn btn-primary">Retake Quiz 🔄</button>
+            </div>
+        </div>
+
     </div>
 
-    <!-- ✿ Result Screen ✿ -->
-    <div id="result-screen" class="screen">
-      <div class="result-content">
-        <div id="result-emoji" class="result-emoji">🍵</div>
-        <h2 id="result-title" class="result-title">You are a...</h2>
-        <p id="result-description" class="result-description"></p>
-        <button id="retake-btn" class="btn btn-primary">Retake Quiz 🔄</button>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
