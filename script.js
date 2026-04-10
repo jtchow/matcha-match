@@ -7,48 +7,82 @@
 
 const questions = [
   {
-    text: "How do you start your morning?",
+    text: "Do you prefer hot or cold weather?",
     answers: [
-      { text: "Slow and cozy — candles, journaling, the works", type: "classic" },
-      { text: "I'm already running late, coffee in hand", type: "iced" },
-      { text: "Yoga or a quick workout", type: "oat" },
-      { text: "I hit snooze at least 3 times", type: "lavender" },
+      { text: "Hot", type: "classic" },
+      { text: "Cold", type: "iced" },
     ],
   },
   {
-    text: "Pick a weekend activity:",
+    text: "If you won the lottery tomorrow, what you would you do first?",
     answers: [
-      { text: "Farmer's market & brunch", type: "oat" },
-      { text: "Binge-watching my comfort show", type: "lavender" },
-      { text: "Trying the newest café in town", type: "iced" },
-      { text: "Reading at a cozy bookshop", type: "classic" },
+      { text: "Shopping spree!!", type: "iced" },
+      { text: "Invest it", type: "classic" },
+      { text: "Quit your job", type: "lavender" },
     ],
   },
   {
-    text: "What's your go-to aesthetic?",
+    text: "Your best friend just hit someone with their car and they come to you for help. What do you do?",
     answers: [
-      { text: "Clean and minimal", type: "classic" },
-      { text: "Colorful and eclectic", type: "iced" },
-      { text: "Earthy and natural", type: "oat" },
-      { text: "Soft and dreamy", type: "lavender" },
+      { text: "Call the police", type: "classic" },
+      { text: "Grab a shovel", type: "iced" },
+      { text: "Make a list of pros and cons", type: "oat" },
     ],
   },
   {
-    text: "Pick a color palette:",
+    text: "Which kind of ice do you prefer?",
     answers: [
-      { text: "Forest green & cream", type: "classic" },
-      { text: "Bright pink & orange", type: "iced" },
-      { text: "Warm brown & sage", type: "oat" },
-      { text: "Lilac & cloud white", type: "lavender" },
+      { text: "Pebble ice", type: "iced" },
+      { text: "Cube", type: "classic" },
+      { text: "I hate ice", type: "oat" },
     ],
   },
   {
-    text: "Your friends would describe you as:",
+    text: "It’s Friday night! Where you at?",
     answers: [
-      { text: "The reliable one", type: "classic" },
-      { text: "The adventurous one", type: "iced" },
-      { text: "The nurturing one", type: "oat" },
-      { text: "The daydreamer", type: "lavender" },
+      { text: "The club", type: "iced" },
+      { text: "Playing board games", type: "oat" },
+      { text: "Watching Netflix", type: "lavender" },
+    ],
+  },
+  {
+    text: "Uh oh, it’s Saturday and your boss is calling! What do you do?",
+    answers: [
+      { text: "Ignore it", type: "lavender" },
+      { text: "Answer right away", type: "classic" },
+      { text: "Tell them you’ll circle back on Monday", type: "oat" },
+    ],
+  },
+  {
+    text: "Oh no! Aliens have invaded earth. They said they’ll leave us alone if we sacrifice one of these three. Who do you pick:",
+    answers: [
+      { text: "Justin Bieber", type: "classic" },
+      { text: "Zendaya", type: "lavender" },
+      { text: "Tom Holland", type: "oat" },
+    ],
+  },
+  {
+    text: "You have to eat one food for the rest of your life, what is it?",
+    answers: [
+      { text: "Ramen", type: "iced" },
+      { text: "Pizza", type: "oat" },
+      { text: "Soup", type: "classic" },
+    ],
+  },
+  {
+    text: "If everyone in the world had the same super power except you, what would you want it to be? (You have no powers)",
+    answers: [
+      { text: "Teleportation", type: "iced" },
+      { text: "Super strength", type: "classic" },
+      { text: "Mind reading", type: "lavender" },
+    ],
+  },
+  {
+    text: "What’s your favorite fun drink? (Other than matcha)",
+    answers: [
+      { text: "Boba", type: "lavender" },
+      { text: "Alcoholic bevvie", type: "iced" },
+      { text: "Soda", type: "classic" },
     ],
   },
 ];
