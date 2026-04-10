@@ -34,7 +34,7 @@ const questions = [
     answers: [
       { text: "🧊 Pebble ice", type: "iced" },
       { text: "🔲 Cube", type: "classic" },
-      { text: "🚫 I hate ice", type: "oat" },
+      { text: "🚫 I hate ICE", type: "oat" },
     ],
   },
   {
@@ -205,16 +205,25 @@ function calculateResult() {
   return Object.keys(tally).reduce((a, b) => (tally[a] >= tally[b] ? a : b));
 }
 
+// ── Prank mode ──────────────────────────────────
+const urlParams = new URLSearchParams(window.location.search);
+const isPrank = urlParams.has("refer");
+
 // ── Show result ─────────────────────────────────
 function showResult() {
-  const winnerType = calculateResult();
-  const result = results[winnerType];
+  if (isPrank) {
+    resultEmoji.textContent = "🚫";
+    resultTitle.textContent = "u a hoe";
+    resultDescription.textContent = "";
+  } else {
+    const winnerType = calculateResult();
+    const result = results[winnerType];
+    resultEmoji.textContent = result.emoji;
+    resultTitle.textContent = `You are a ${result.title}!`;
+    resultDescription.textContent = result.description;
+  }
 
-  resultEmoji.textContent = result.emoji;
-  resultTitle.textContent = `You are a ${result.title}!`;
-  resultDescription.textContent = result.description;
   progressBar.style.width = "100%";
-
   showScreen(resultScreen);
 }
 
