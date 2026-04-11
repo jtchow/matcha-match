@@ -214,9 +214,9 @@ const loadingScreen = document.getElementById("loading-screen");
 const loadingText = document.getElementById("loading-text");
 
 const loadingMessages = [
-  "Whisking your answers... 🍵",
-  "Steaming the oat milk... 🥛",
   "Sifting through matcha powder... 🍃",
+  "Steaming the oat milk... 🥛",
+  "Whisking your answers... 🍵",
   "Adding a sprinkle of magic... ✨",
   "Almost ready... 🌸",
 ];
