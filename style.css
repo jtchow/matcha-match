@@ -464,6 +464,47 @@ body::after {
   }
 }
 
+/* ── Reveal Screen ──────────────────────────── */
+.reveal-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem 0;
+}
+
+.reveal-emoji {
+  font-size: 3.5rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.reveal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--matcha-dark);
+}
+
+.reveal-description {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 300px;
+  font-weight: 500;
+}
+
 /* ── Responsive tweaks ───────────────────────── */
 @media (min-width: 480px) {
   .screen {

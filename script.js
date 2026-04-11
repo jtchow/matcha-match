@@ -221,7 +221,7 @@ const loadingMessages = [
   "Almost ready... 🌸",
 ];
 
-let loadingInterval = null;
+let loadingTimeout = null;
 
 function showLoadingScreen() {
   showScreen(loadingScreen);
@@ -229,22 +229,36 @@ function showLoadingScreen() {
 
   let msgIndex = 0;
   loadingText.textContent = loadingMessages[0];
+  loadingText.style.opacity = "1";
 
-  loadingInterval = setInterval(() => {
+  function cycleMessage() {
     msgIndex++;
     if (msgIndex < loadingMessages.length) {
+      // fade out over 300ms, swap text, fade back in
       loadingText.style.opacity = "0";
       setTimeout(() => {
         loadingText.textContent = loadingMessages[msgIndex];
         loadingText.style.opacity = "1";
-      }, 1000);
+      }, 300);
+      // schedule next message 1s after this one appeared
+      loadingTimeout = setTimeout(cycleMessage, 1500);
+    } else {
+      // all messages shown — go to reveal screen
+      setTimeout(showRevealScreen, 600);
     }
-  }, 1000);
+  }
 
-  setTimeout(() => {
-    clearInterval(loadingInterval);
-    showResult();
-  }, loadingMessages.length * 1000);
+  // first message shows for 1s, then start cycling
+  loadingTimeout = setTimeout(cycleMessage, 1500);
+}
+
+// ── Reveal screen ───────────────────────────────
+const revealScreen = document.getElementById("reveal-screen");
+const revealBtn = document.getElementById("reveal-btn");
+
+function showRevealScreen() {
+  progressBar.style.width = "95%";
+  showScreen(revealScreen);
 }
 
 // ── Show result ─────────────────────────────────
@@ -285,6 +299,10 @@ backBtn.addEventListener("click", () => {
     currentQuestion--;
     renderQuestion();
   }
+});
+
+revealBtn.addEventListener("click", () => {
+  showResult();
 });
 
 retakeBtn.addEventListener("click", () => {
