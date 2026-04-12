@@ -230,6 +230,17 @@ function calculateResult() {
 const urlParams = new URLSearchParams(window.location.search);
 const isPrank = urlParams.has("refer");
 
+// ── Backdoor: force a specific result via ?name=<name> ──
+const nameBackdoors = {
+  jason: "waffles",
+  kylie: "strawberry",
+  richard: "ceremony",
+  tyler: "straight",
+  annie: "classic",
+};
+const backdoorName = (urlParams.get("name") || "").toLowerCase().trim();
+const backdoorType = nameBackdoors[backdoorName] || null;
+
 // ── Loading screen ──────────────────────────────
 const loadingScreen = document.getElementById("loading-screen");
 const loadingText = document.getElementById("loading-text");
@@ -289,7 +300,17 @@ const resultLessCompatible = document.getElementById("result-less-compatible");
 const resultHobbies = document.getElementById("result-hobbies");
 
 function showResult() {
-  if (isPrank) {
+  if (backdoorType) {
+    // Backdoor: force a specific real result via ?name=
+    const result = results[backdoorType];
+    resultEmoji.textContent = result.emoji;
+    resultTitle.textContent = result.title;
+    resultDescription.textContent = result.description;
+    resultDetails.style.display = "";
+    resultCompatible.textContent = result.compatible.join(" & ");
+    resultLessCompatible.textContent = result.lessCompatible.join(" & ");
+    resultHobbies.innerHTML = result.hobbies.map(h => `<li>${h}</li>`).join("");
+  } else if (isPrank) {
     resultEmoji.textContent = "🚫";
     resultTitle.textContent = "u a hoe";
     resultDescription.textContent = "";
