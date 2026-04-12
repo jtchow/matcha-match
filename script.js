@@ -127,7 +127,7 @@ const results = {
       "Methodical, thoughtful, and intentional. You approach life like a perfectly choreographed ritual — every step has a purpose. Your logical mind and attention to detail are unmatched.",
     compatible: ["Classic Matcha Latte", "Straight Matcha"],
     lessCompatible: ["Strawberry Matcha Latte"],
-    hobbies: ["Journaling ✍️", "Puzzles 🧩", "Gardening 🌱"],
+    hobbies: ["Coding 💻", "Journaling ✍️", "Video Games 🎮"],
   },
   waffles: {
     emoji: "🧇",
@@ -136,7 +136,7 @@ const results = {
       "You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you turn heads by doing things nobody else would think of. Why be ordinary when you can be extraordinary?",
     compatible: ["Strawberry Matcha Latte", "Straight Matcha"],
     lessCompatible: ["Classic Matcha Latte"],
-    hobbies: ["Traveling ✈️", "Thrifting 🛍️", "Learning random skills on YouTube 📱"],
+    hobbies: ["Traveling ✈️", "Brainstorming new ideas 💡", "Learning random skills on YouTube 📱"],
   },
 };
 
@@ -298,7 +298,7 @@ function showResult() {
     const winnerType = calculateResult();
     const result = results[winnerType];
     resultEmoji.textContent = result.emoji;
-    resultTitle.textContent = `You are a ${result.title}!`;
+    resultTitle.textContent = `${result.title}`;
     resultDescription.textContent = result.description;
     resultDetails.style.display = "";
     resultCompatible.textContent = result.compatible.join(" & ");
