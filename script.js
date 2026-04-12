@@ -94,7 +94,7 @@ const questions = [
 
 const results = {
   strawberry: {
-    emoji: "�",
+    emoji: "🍓",
     title: "Strawberry Matcha Latte",
     description:
       "You're the life of the party! Spunky, social, and always outgoing — you light up every room you walk into. People are drawn to your infectious energy and you never meet a stranger.",
@@ -109,7 +109,7 @@ const results = {
     emoji: "🍃",
     title: "Straight Matcha",
     description:
-      "No nonsense, no fluff — just pure power. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
+      "No nonsense, no fluff. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
   },
   ceremony: {
     emoji: "🫖",
