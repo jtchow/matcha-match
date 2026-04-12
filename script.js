@@ -9,79 +9,79 @@ const questions = [
   {
     text: "Do you prefer hot or cold weather?",
     answers: [
-      { text: "☀️ Hot", type: "classic" },
-      { text: "❄️ Cold", type: "iced" },
+      { text: "☀️ Hot", type: "strawberry" },
+      { text: "❄️ Cold", type: "classic" },
     ],
   },
   {
     text: "If you won the lottery tomorrow, what you would you do first?",
     answers: [
-      { text: "🛍️ Shopping spree!!", type: "iced" },
-      { text: "📈 Invest it", type: "classic" },
-      { text: "✌️ Quit your job", type: "lavender" },
+      { text: "🛍️ Shopping spree!!", type: "strawberry" },
+      { text: "📈 Invest it", type: "ceremony" },
+      { text: "✌️ Quit your job", type: "straight" },
     ],
   },
   {
     text: "Your best friend just hit someone with their car and they come to you for help. What do you do?",
     answers: [
-      { text: "🚓 Call the police", type: "classic" },
-      { text: "⛏️ Grab a shovel", type: "iced" },
-      { text: "📝 Make a list of pros and cons", type: "oat" },
+      { text: "🚓 Call the police", type: "straight" },
+      { text: "⛏️ Grab a shovel", type: "waffles" },
+      { text: "📝 Make a list of pros and cons", type: "ceremony" },
     ],
   },
   {
     text: "Which kind of ice do you prefer?",
     answers: [
-      { text: "🧊 Pebble ice", type: "iced" },
+      { text: "🧊 Pebble ice", type: "strawberry" },
       { text: "🔲 Cube", type: "classic" },
-      { text: "🚫 I hate ICE", type: "oat" },
+      { text: "🚫 I hate ICE", type: "straight" },
     ],
   },
   {
-    text: "It’s Friday night! Where you at?",
+    text: "It's Friday night! Where you at?",
     answers: [
-      { text: "🪩 The club", type: "iced" },
-      { text: "🎲 Playing board games", type: "oat" },
-      { text: "🍿 Watching Netflix", type: "lavender" },
+      { text: "🪩 The club", type: "strawberry" },
+      { text: "🎲 Playing board games", type: "ceremony" },
+      { text: "🍿 Watching Netflix", type: "classic" },
     ],
   },
   {
-    text: "Uh oh, it’s Saturday and your boss is calling! What do you do?",
+    text: "Uh oh, it's Saturday and your boss is calling! What do you do?",
     answers: [
-      { text: "🔕 Ignore it", type: "lavender" },
+      { text: "🔕 Ignore it", type: "waffles" },
       { text: "📞 Answer right away", type: "classic" },
-      { text: "🗓️ Tell them you’ll circle back on Monday", type: "oat" },
+      { text: "🗓️ Tell them you'll circle back on Monday", type: "ceremony" },
     ],
   },
   {
-    text: "Oh no! Aliens have invaded earth. They said they’ll leave us alone if we sacrifice one of these three. Who do you pick:",
+    text: "Oh no! Aliens have invaded earth. They said they'll leave us alone if we sacrifice one of these three. Who do you pick:",
     answers: [
       { text: "🎤 Justin Bieber", type: "classic" },
-      { text: "🌟 Zendaya", type: "lavender" },
-      { text: "🕷️ Tom Holland", type: "oat" },
+      { text: "🌟 Zendaya", type: "waffles" },
+      { text: "🕷️ Tom Holland", type: "straight" },
     ],
   },
   {
     text: "You have to eat one food for the rest of your life, what is it?",
     answers: [
-      { text: "🍜 Ramen", type: "iced" },
-      { text: "🍕 Pizza", type: "oat" },
-      { text: "🥣 Soup", type: "classic" },
+      { text: "🍜 Ramen", type: "waffles" },
+      { text: "🍕 Pizza", type: "classic" },
+      { text: "🥣 Soup", type: "ceremony" },
     ],
   },
   {
     text: "If everyone in the world had the same super power except you, what would you want it to be? (You have no powers)",
     answers: [
-      { text: "🌌 Teleportation", type: "iced" },
-      { text: "💪 Super strength", type: "classic" },
-      { text: "🧠 Mind reading", type: "lavender" },
+      { text: "🌌 Teleportation", type: "waffles" },
+      { text: "💪 Super strength", type: "straight" },
+      { text: "🧠 Mind reading", type: "ceremony" },
     ],
   },
   {
-    text: "What’s your favorite fun drink? (Other than matcha)",
+    text: "What's your favorite fun drink? (Other than matcha)",
     answers: [
-      { text: "🧋 Boba", type: "lavender" },
-      { text: "🍸 Alcoholic bevvie", type: "iced" },
+      { text: "🧋 Boba", type: "strawberry" },
+      { text: "🍸 Alcoholic bevvie", type: "waffles" },
       { text: "🥤 Soda", type: "classic" },
     ],
   },
@@ -93,29 +93,35 @@ const questions = [
 // Keys must match the `type` values used in answers above.
 
 const results = {
+  strawberry: {
+    emoji: "�",
+    title: "Strawberry Matcha Latte",
+    description:
+      "You're the life of the party! Spunky, social, and always outgoing — you light up every room you walk into. People are drawn to your infectious energy and you never meet a stranger.",
+  },
   classic: {
     emoji: "🍵",
     title: "Classic Matcha Latte",
     description:
-      "You're timeless and grounded. You appreciate the simple things done really well — a perfectly whisked bowl of matcha, a good book, and a quiet morning. People look up to your calm energy.",
+      "Reliable, steady, and comforting — that's you! You're the person everyone counts on. You love your routines and do things the right way, every time. Why fix what isn't broken?",
   },
-  iced: {
-    emoji: "🧊",
-    title: "Iced Matcha Latte",
+  straight: {
+    emoji: "🍃",
+    title: "Straight Matcha",
     description:
-      "You're bold, refreshing, and always on the move! You bring energy to every room and love trying new things. Life's too short to stay in one place.",
+      "No nonsense, no fluff — just pure power. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
   },
-  oat: {
-    emoji: "🥛",
-    title: "Oat Milk Matcha Latte",
+  ceremony: {
+    emoji: "🫖",
+    title: "Tea Ceremony Matcha",
     description:
-      "Warm, creamy, and nurturing — that's you! You care deeply about the world around you and always make people feel welcome. You're everyone's comfort person.",
+      "Methodical, thoughtful, and intentional. You approach life like a perfectly choreographed ritual — every step has a purpose. Your logical mind and attention to detail are unmatched.",
   },
-  lavender: {
-    emoji: "💜",
-    title: "Lavender Matcha Latte",
+  waffles: {
+    emoji: "🧇",
+    title: "Matcha Waffles",
     description:
-      "Dreamy, creative, and a little mysterious. You see the world through a soft-focus lens and have a rich inner world. People are drawn to your gentle magic.",
+      "You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you turn heads by doing things nobody else would think of. Why be ordinary when you can be extraordinary?",
   },
 };
 
