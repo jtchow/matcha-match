@@ -14,22 +14,6 @@ const questions = [
     ],
   },
   {
-    text: "If you won the lottery tomorrow, what you would you do first?",
-    answers: [
-      { text: "🛍️ Shopping spree!!", type: "strawberry" },
-      { text: "📈 Invest it", type: "ceremony" },
-      { text: "✌️ Quit your job", type: "straight" },
-    ],
-  },
-  {
-    text: "Your best friend just hit someone with their car and they come to you for help. What do you do?",
-    answers: [
-      { text: "🚓 Call the police", type: "straight" },
-      { text: "⛏️ Grab a shovel", type: "waffles" },
-      { text: "📝 Make a list of pros and cons", type: "ceremony" },
-    ],
-  },
-  {
     text: "Which kind of ice do you prefer?",
     answers: [
       { text: "🧊 Pebble ice", type: "strawberry" },
@@ -46,11 +30,27 @@ const questions = [
     ],
   },
   {
+    text: "If you won the lottery tomorrow, what you would you do first?",
+    answers: [
+      { text: "🛍️ Shopping spree!!", type: "strawberry" },
+      { text: "📈 Invest it", type: "ceremony" },
+      { text: "✌️ Quit your job", type: "straight" },
+    ],
+  },
+  {
     text: "Uh oh, it's Saturday and your boss is calling! What do you do?",
     answers: [
       { text: "🔕 Ignore it", type: "waffles" },
       { text: "📞 Answer right away", type: "classic" },
       { text: "🗓️ Tell them you'll circle back on Monday", type: "ceremony" },
+    ],
+  },
+  {
+    text: "Your best friend just hit someone with their car and they come to you for help. What do you do?",
+    answers: [
+      { text: "🚓 Call the police", type: "straight" },
+      { text: "⛏️ Grab a shovel", type: "waffles" },
+      { text: "📝 Make a list of pros and cons", type: "ceremony" },
     ],
   },
   {
@@ -62,11 +62,11 @@ const questions = [
     ],
   },
   {
-    text: "You have to eat one food for the rest of your life, what is it?",
+    text: "You're the new doorman of a building and you've been told only to let in people with appointments. A pregnant woman comes up and asks to use the bathroom. What do you do??",
     answers: [
-      { text: "🍜 Ramen", type: "waffles" },
-      { text: "🍕 Pizza", type: "classic" },
-      { text: "🥣 Soup", type: "ceremony" },
+      { text: "Let her in", type: "waffles" },
+      { text: "Tell her no", type: "classic" },
+      { text: "Let her in, but keep a close eye on her", type: "ceremony" },
     ],
   },
   {
@@ -98,30 +98,45 @@ const results = {
     title: "Strawberry Matcha Latte",
     description:
       "You're the life of the party! Spunky, social, and always outgoing — you light up every room you walk into. People are drawn to your infectious energy and you never meet a stranger.",
+    compatible: ["Matcha Waffles", "Classic Matcha Latte"],
+    lessCompatible: ["Tea Ceremony Matcha"],
+    hobbies: ["Going to concerts 🎶", "Hosting game nights 🎲", "Trying new restaurants 🍽️"],
   },
   classic: {
     emoji: "🍵",
     title: "Classic Matcha Latte",
     description:
       "Reliable, steady, and comforting — that's you! You're the person everyone counts on. You love your routines and do things the right way, every time. Why fix what isn't broken?",
+    compatible: ["Tea Ceremony Matcha", "Strawberry Matcha Latte"],
+    lessCompatible: ["Matcha Waffles"],
+    hobbies: ["Reading 📚", "Cooking comfort food 🍳", "Morning walks ☀️"],
   },
   straight: {
     emoji: "🍃",
     title: "Straight Matcha",
     description:
       "No nonsense, no fluff. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
+    compatible: ["Classic Matcha Latte"],
+    lessCompatible: ["Strawberry Matcha Latte", "Matcha Waffles"],
+    hobbies: ["Working out 💪", "Listening to podcasts 🎧", "Chess ♟️"],
   },
   ceremony: {
     emoji: "🫖",
     title: "Tea Ceremony Matcha",
     description:
       "Methodical, thoughtful, and intentional. You approach life like a perfectly choreographed ritual — every step has a purpose. Your logical mind and attention to detail are unmatched.",
+    compatible: ["Classic Matcha Latte", "Straight Matcha"],
+    lessCompatible: ["Strawberry Matcha Latte"],
+    hobbies: ["Journaling ✍️", "Puzzles 🧩", "Gardening 🌱"],
   },
   waffles: {
     emoji: "🧇",
     title: "Matcha Waffles",
     description:
       "You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you turn heads by doing things nobody else would think of. Why be ordinary when you can be extraordinary?",
+    compatible: ["Strawberry Matcha Latte", "Straight Matcha"],
+    lessCompatible: ["Classic Matcha Latte"],
+    hobbies: ["Traveling ✈️", "Thrifting 🛍️", "Learning random skills on YouTube 📱"],
   },
 };
 
@@ -130,7 +145,7 @@ const results = {
 //     touch anything below)  ✿
 // ────────────────────────────────────────────────
 
-let currentQuestion = 0;
+let currentQuestion = 9;
 const userAnswers = []; // stores selected type per question
 
 // DOM refs
@@ -268,17 +283,27 @@ function showRevealScreen() {
 }
 
 // ── Show result ─────────────────────────────────
+const resultDetails = document.getElementById("result-details");
+const resultCompatible = document.getElementById("result-compatible");
+const resultLessCompatible = document.getElementById("result-less-compatible");
+const resultHobbies = document.getElementById("result-hobbies");
+
 function showResult() {
   if (isPrank) {
     resultEmoji.textContent = "🚫";
     resultTitle.textContent = "u a hoe";
     resultDescription.textContent = "";
+    resultDetails.style.display = "none";
   } else {
     const winnerType = calculateResult();
     const result = results[winnerType];
     resultEmoji.textContent = result.emoji;
     resultTitle.textContent = `You are a ${result.title}!`;
     resultDescription.textContent = result.description;
+    resultDetails.style.display = "";
+    resultCompatible.textContent = result.compatible.join(" & ");
+    resultLessCompatible.textContent = result.lessCompatible.join(" & ");
+    resultHobbies.innerHTML = result.hobbies.map(h => `<li>${h}</li>`).join("");
   }
 
   progressBar.style.width = "100%";
