@@ -151,7 +151,7 @@ const results = {
 //     touch anything below)  ✿
 // ────────────────────────────────────────────────
 
-let currentQuestion = 9;
+let currentQuestion = 0;
 const userAnswers = []; // stores selected type per question
 
 // DOM refs
