@@ -96,6 +96,7 @@ const questions = [
 const results = {
   strawberry: {
     emoji: "🍓",
+    image: null,
     title: "Strawberry Matcha Latte",
     description:
       "You're the life of the party! Spunky, social, and always outgoing — you light up every room you walk into. People are drawn to your infectious energy and you never meet a stranger.",
@@ -105,6 +106,7 @@ const results = {
   },
   classic: {
     emoji: "🍵",
+    image: "assets/matchalattej.png",
     title: "Classic Matcha Latte",
     description:
       "Reliable, steady, and comforting — that's you! You're the person everyone counts on. You love your routines and do things the right way, every time. Why fix what isn't broken?",
@@ -114,6 +116,7 @@ const results = {
   },
   straight: {
     emoji: "🍃",
+    image: null,
     title: "Straight Matcha",
     description:
       "No nonsense, no fluff. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
@@ -123,6 +126,7 @@ const results = {
   },
   ceremony: {
     emoji: "🫖",
+    image: "assets/teaceremonymatcha.png",
     title: "Tea Ceremony Matcha",
     description:
       "Methodical, thoughtful, and intentional. You approach life like a perfectly choreographed ritual — every step has a purpose. Your logical mind and attention to detail are unmatched.",
@@ -132,6 +136,7 @@ const results = {
   },
   waffles: {
     emoji: "🍦",
+    image: "assets/softserve.png",
     title: "Matcha Soft Serve",
     description:
       "A timeless classic, with a fun new twist. You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you're never afraid to shake up the status quo.",
@@ -146,7 +151,7 @@ const results = {
 //     touch anything below)  ✿
 // ────────────────────────────────────────────────
 
-let currentQuestion = 0;
+let currentQuestion = 9;
 const userAnswers = []; // stores selected type per question
 
 // DOM refs
@@ -300,11 +305,31 @@ const resultCompatible = document.getElementById("result-compatible");
 const resultLessCompatible = document.getElementById("result-less-compatible");
 const resultHobbies = document.getElementById("result-hobbies");
 
+function renderResultImage(result) {
+  // Clear existing content
+  resultEmoji.textContent = "";
+  resultEmoji.innerHTML = "";
+
+  if (result.image) {
+    // Show image in cute box
+    resultEmoji.classList.add("has-image");
+    const img = document.createElement("img");
+    img.src = result.image;
+    img.alt = result.title;
+    img.className = "result-profile-img";
+    resultEmoji.appendChild(img);
+  } else {
+    // Fallback to emoji
+    resultEmoji.classList.remove("has-image");
+    resultEmoji.textContent = result.emoji;
+  }
+}
+
 function showResult() {
   if (backdoorType) {
     // Backdoor: force a specific real result via ?name=
     const result = results[backdoorType];
-    resultEmoji.textContent = result.emoji;
+    renderResultImage(result);
     resultTitle.textContent = result.title;
     resultDescription.textContent = result.description;
     resultDetails.style.display = "";
@@ -312,6 +337,7 @@ function showResult() {
     resultLessCompatible.textContent = result.lessCompatible.join(" & ");
     resultHobbies.innerHTML = result.hobbies.map(h => `<li>${h}</li>`).join("");
   } else if (isPrank) {
+    resultEmoji.classList.remove("has-image");
     resultEmoji.textContent = "🚫";
     resultTitle.textContent = "u a hoe";
     resultDescription.textContent = "";
@@ -319,7 +345,7 @@ function showResult() {
   } else {
     const winnerType = calculateResult();
     const result = results[winnerType];
-    resultEmoji.textContent = result.emoji;
+    renderResultImage(result);
     resultTitle.textContent = `${result.title}`;
     resultDescription.textContent = result.description;
     resultDetails.style.display = "";

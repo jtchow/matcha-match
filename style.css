@@ -319,13 +319,24 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   padding: 0.5rem 0;
+  width: 100%;
+}
+
+/* ── Result Header (image + title side by side) ── */
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 0.25rem;
 }
 
 .result-emoji {
   font-size: 4.5rem;
   animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  flex-shrink: 0;
 }
 
 @keyframes pop {
@@ -340,17 +351,56 @@ body::after {
   }
 }
 
+/* When the result has a custom image */
+.result-emoji.has-image {
+  font-size: unset;
+  width: 48%;
+  aspect-ratio: 1 / 1;
+  background: var(--white);
+  border: 2.5px solid var(--text);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.result-profile-img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+}
+
+.result-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.25rem;
+}
+
+.result-you-are {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+}
+
 .result-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--matcha-dark);
+  line-height: 1.25;
 }
 
 .result-description {
   font-size: 0.95rem;
   color: var(--text-light);
   line-height: 1.6;
-  max-width: 340px;
+  max-width: 380px;
+  text-align: left;
 }
 
 .result-details {
