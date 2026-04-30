@@ -151,7 +151,7 @@ const results = {
 //     touch anything below)  ✿
 // ────────────────────────────────────────────────
 
-let currentQuestion = 0;
+let currentQuestion = 9;
 const userAnswers = []; // stores selected type per question
 
 // DOM refs
@@ -337,11 +337,22 @@ function showResult() {
     resultLessCompatible.textContent = result.lessCompatible.join(" & ");
     resultHobbies.innerHTML = result.hobbies.map(h => `<li>${h}</li>`).join("");
   } else if (isPrank) {
-    resultEmoji.classList.remove("has-image");
-    resultEmoji.textContent = "🚫";
-    resultTitle.textContent = "u a hoe";
-    resultDescription.textContent = "";
-    resultDetails.style.display = "none";
+    const prankResult = {
+      emoji: "🚫",
+      image: "assets/sarah.png",       // ← swap in your friend's photo
+      title: "a hoe",
+      description: "happy birthday pal!",
+      compatible: ["richard"],
+      lessCompatible: ["dairy, eggs, nuts, and shellfish 😭"],
+      hobbies: ["taking personality quizzes 💅", "workin 💻"],
+    };
+    renderResultImage(prankResult);
+    resultTitle.textContent = prankResult.title;
+    resultDescription.textContent = prankResult.description;
+    resultDetails.style.display = "";
+    resultCompatible.textContent = prankResult.compatible.join(" & ");
+    resultLessCompatible.textContent = prankResult.lessCompatible.join(" & ");
+    resultHobbies.innerHTML = prankResult.hobbies.map(h => `<li>${h}</li>`).join("");
   } else {
     const winnerType = calculateResult();
     const result = results[winnerType];
