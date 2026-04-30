@@ -339,7 +339,7 @@ function showResult() {
   } else if (isPrank) {
     const prankResult = {
       emoji: "🚫",
-      image: "assets/sarah.png",       // ← swap in your friend's photo
+      image: "assets/sarah.jpg",       // ← swap in your friend's photo
       title: "a hoe",
       description: "happy birthday pal!",
       compatible: ["richard"],
