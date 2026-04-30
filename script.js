@@ -7,18 +7,18 @@
 
 const questions = [
   {
+    text: "What's your favorite fun drink? (Other than matcha)",
+    answers: [
+      { text: "🧋 Boba", type: "strawberry" },
+      { text: "🍸 Alcoholic bevvie", type: "waffles" },
+      { text: "🥤 Soda", type: "classic" },
+    ],
+  },
+  {
     text: "Do you prefer hot or cold weather?",
     answers: [
       { text: "☀️ Hot", type: "strawberry" },
       { text: "❄️ Cold", type: "classic" },
-    ],
-  },
-  {
-    text: "Which kind of ice do you prefer?",
-    answers: [
-      { text: "🧊 Pebble ice", type: "strawberry" },
-      { text: "🔲 Cube", type: "classic" },
-      { text: "🚫 I hate ICE", type: "straight" },
     ],
   },
   {
@@ -62,11 +62,12 @@ const questions = [
     ],
   },
   {
-    text: "You're the new doorman of a building and you've been told only to let in people with appointments. A pregnant woman comes up and asks to use the bathroom. What do you do??",
+    text: "Your dog and a random child are trapped in a burning building. Who do you save?",
     answers: [
-      { text: "Let her in", type: "waffles" },
-      { text: "Tell her no", type: "classic" },
-      { text: "Let her in, but keep a close eye on her", type: "ceremony" },
+      { text: "🐶 Your dog", type: "strawberry" },
+      { text: "👦🏻 The child", type: "straight" },
+      { text: "😵 They both die because you can't decide", type: "classic" },
+
     ],
   },
   {
@@ -78,13 +79,13 @@ const questions = [
     ],
   },
   {
-    text: "What's your favorite fun drink? (Other than matcha)",
+    text: "When's the last time you cried?",
     answers: [
-      { text: "🧋 Boba", type: "strawberry" },
-      { text: "🍸 Alcoholic bevvie", type: "waffles" },
-      { text: "🥤 Soda", type: "classic" },
+      { text: "😅 Today", type: "waffles" },
+      { text: "📅 About a month ago", type: "classic" },
+      { text: "🤷‍♀️ I don't even remember", type: "ceremony" },
     ],
-  },
+  }
 ];
 
 // ────────────────────────────────────────────────
@@ -130,10 +131,10 @@ const results = {
     hobbies: ["Coding 💻", "Journaling ✍️", "Video Games 🎮"],
   },
   waffles: {
-    emoji: "🧇",
-    title: "Matcha Waffles",
+    emoji: "🍦",
+    title: "Matcha Soft Serve",
     description:
-      "You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you turn heads by doing things nobody else would think of. Why be ordinary when you can be extraordinary?",
+      "A timeless classic, with a fun new twist. You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you're never afraid to shake up the status quo.",
     compatible: ["Strawberry Matcha Latte", "Straight Matcha"],
     lessCompatible: ["Classic Matcha Latte"],
     hobbies: ["Traveling ✈️", "Brainstorming new ideas 💡", "Learning random skills on YouTube 📱"],
