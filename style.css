@@ -314,6 +314,30 @@ body::after {
 }
 
 /* ── Result Screen ───────────────────────────── */
+#result-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+#result-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, var(--matcha) 1.2px, transparent 1.2px),
+    radial-gradient(circle, var(--matcha) 1px, transparent 1px);
+  background-size: 30px 30px, 22px 22px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#result-screen > * {
+  position: relative;
+  z-index: 1;
+}
+
 .result-content {
   text-align: center;
   display: flex;
@@ -397,10 +421,14 @@ body::after {
 
 .result-description {
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--text);
+  font-weight: 500;
   line-height: 1.6;
-  max-width: 380px;
   text-align: left;
+  width: 100%;
+  background: rgba(168, 213, 186, 0.15);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
 }
 
 .result-details {

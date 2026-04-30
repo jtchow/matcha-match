@@ -97,7 +97,7 @@ const results = {
   strawberry: {
     emoji: "🍓",
     image: null,
-    title: "Strawberry Matcha Latte",
+    title: "Strawberry Matcha Latte!",
     description:
       "You're the life of the party! Spunky, social, and always outgoing — you light up every room you walk into. People are drawn to your infectious energy and you never meet a stranger.",
     compatible: ["Matcha Waffles", "Classic Matcha Latte"],
@@ -107,7 +107,7 @@ const results = {
   classic: {
     emoji: "🍵",
     image: "assets/matchalattej.png",
-    title: "Classic Matcha Latte",
+    title: "Classic Matcha Latte!",
     description:
       "Reliable, steady, and comforting — that's you! You're the person everyone counts on. You love your routines and do things the right way, every time. Why fix what isn't broken?",
     compatible: ["Tea Ceremony Matcha", "Strawberry Matcha Latte"],
@@ -117,7 +117,7 @@ const results = {
   straight: {
     emoji: "🍃",
     image: null,
-    title: "Straight Matcha",
+    title: "Straight Matcha!",
     description:
       "No nonsense, no fluff. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
     compatible: ["Classic Matcha Latte"],
@@ -127,7 +127,7 @@ const results = {
   ceremony: {
     emoji: "🫖",
     image: "assets/teaceremonymatcha.png",
-    title: "Tea Ceremony Matcha",
+    title: "Tea Ceremony Matcha!",
     description:
       "Methodical, thoughtful, and intentional. You approach life like a perfectly choreographed ritual — every step has a purpose. Your logical mind and attention to detail are unmatched.",
     compatible: ["Classic Matcha Latte", "Straight Matcha"],
@@ -137,7 +137,7 @@ const results = {
   waffles: {
     emoji: "🍦",
     image: "assets/softserve.png",
-    title: "Matcha Soft Serve",
+    title: "Matcha Soft Serve!",
     description:
       "A timeless classic, with a fun new twist. You're not afraid to go off the beaten path! Bold, adventurous, and endlessly creative — you're never afraid to shake up the status quo.",
     compatible: ["Strawberry Matcha Latte", "Straight Matcha"],
