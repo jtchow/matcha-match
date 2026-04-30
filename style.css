@@ -405,7 +405,6 @@ body::after {
 
 .result-details {
   width: 100%;
-  max-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
