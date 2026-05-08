@@ -109,20 +109,21 @@ const results = {
     image: "assets/matchalattej.png",
     title: "Classic Matcha Latte!",
     description:
-      "Reliable, steady, and comforting — that's you! You're the person everyone counts on. You love your routines and do things the right way, every time. Why fix what isn't broken?",
+      "No nonsense, no fluff. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
     compatible: ["Tea Ceremony Matcha", "Strawberry Matcha Latte"],
     lessCompatible: ["Matcha Waffles"],
-    hobbies: ["Reading 📚", "Cooking comfort food 🍳", "Morning walks ☀️"],
+    hobbies: ["Working out 💪", "Listening to podcasts 🎧", "Chess ♟️"],
+
   },
   straight: {
     emoji: "🍃",
     image: null,
     title: "Straight Matcha!",
     description:
-      "No nonsense, no fluff. You're direct, decisive, and a natural-born leader. You cut through the noise and get things done while everyone else is still talking.",
+      "Reliable, steady, and comforting — that's you! You're the person everyone counts on. You love your routines and do things the right way, every time. Why fix what isn't broken?",
     compatible: ["Classic Matcha Latte"],
     lessCompatible: ["Strawberry Matcha Latte", "Matcha Waffles"],
-    hobbies: ["Working out 💪", "Listening to podcasts 🎧", "Chess ♟️"],
+    hobbies: ["Reading 📚", "Cooking comfort food 🍳", "Morning walks ☀️"],
   },
   ceremony: {
     emoji: "🫖",
@@ -241,8 +242,8 @@ const nameBackdoors = {
   jason: "waffles",
   kylie: "strawberry",
   richard: "ceremony",
-  tyler: "straight",
-  annie: "classic",
+  tyler: "classic",
+  annie: "straight",
 };
 const backdoorName = (urlParams.get("name") || "").toLowerCase().trim();
 const backdoorType = nameBackdoors[backdoorName] || null;
